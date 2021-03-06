@@ -25,7 +25,7 @@ export default class Globals {
   static mdCreateUrl = process.env.MD_CREATE_URL || "http://front/pad/new";
   static mdShowUrl = process.env.MD_SHOW_URL || "/pad";
 
-  static externalAuthenticationModuleAuthorized = ['oauth2','keycloak'];
+  static externalAuthenticationModuleAuthorized = ['oauth2','keycloak', 'gitlab'];
 
   static externalAuthenticationModules = (process.env.EXTERNAL_AUTHENTICATION_MODULES || "").split(',').filter(value => Globals.externalAuthenticationModuleAuthorized.includes(value));
   
@@ -40,6 +40,11 @@ export default class Globals {
   static externalAuthenticationKeycloakAuthUrl = process.env.EXTERNAL_AUTHENTICATION_KEYCLOAK_AUTH_URL || "";
   static externalAuthenticationKeycloakRealm = process.env.EXTERNAL_AUTHENTICATION_KEYCLOAK_REALM || "";
   static externalAuthenticationKeycloakCallbackUrl = process.env.EXTERNAL_AUTHENTICATION_KEYCLOAK_CALLBACK_URL || "";
+
+  static externalAuthenticationGitlabClientID = process.env.EXTERNAL_AUTHENTICATION_GITLAB_CLIENT_ID || "";
+  static externalAuthenticationGitlabClientSecret = process.env.EXTERNAL_AUTHENTICATION_GITLAB_CLIENT_SECRET || "";
+  static externalAuthenticationGitlabCallbackUrl = process.env.EXTERNAL_AUTHENTICATION_GITLAB_CALLBACK_URL || "";
+  static externalAuthenticationGitlabBaseUrl = process.env.EXTERNAL_AUTHENTICATION_GITLAB_BASE_URL || "";
 
   static maxCtfPerPage = 20;
 
