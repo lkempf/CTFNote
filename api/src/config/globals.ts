@@ -17,6 +17,7 @@ export default class Globals {
 
   static adminRights = [Rights.ADMIN_ALL];
   static defaultRights = [];
+  static externalUserDefaultRights = [];
 
   static allowRegistration = true;
   static allowExternalRegistration = false;

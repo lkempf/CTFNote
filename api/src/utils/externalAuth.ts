@@ -24,7 +24,7 @@ export default async function findOrCreateExternalUser(profile, done){
 			return done("The external registration process is disabled, contact the administrator",null);
 		}
 		
-		let user = userRepo.create({ username, slug, password: "empty_password", rights: Globals.defaultRights, externalAuth:true });
+		let user = userRepo.create({ username, slug, password: "empty_password", rights: Globals.externalUserDefaultRights, externalAuth:true });
 
 		try {
 			user = await userRepo.save(user);
